@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    background-color: rgb(224, 224, 224);
+    font-size: 1.5rem;
+  }
+
+  #desc {
+    background-color: rgb(255, 255, 153);
+    text-wrap: wrap;
+    margin: 40px 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  #output {
+    background-color: rgb(160, 255, 255);
+    text-wrap: wrap;
+    margin: 40px 10px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #9C27B0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: black;
+    font-weight: bold;
+  }
+</style>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <h2>Show, Hide, and Toggle in jQuery</h2>
+
+  <div id="desc">
+    show() → Displays hidden elements.<br>
+    hide() → Hides visible elements.<br>
+    toggle() → Toggles visibility between show and hide states.<br>
+    These methods are used to enhance interactivity and smooth transitions.
+  </div>
+
+  <button id="showBtn">Show</button>
+  <button id="hideBtn">Hide</button>
+  <button id="toggleBtn">Toggle</button>
+  
+  <div id="output">This is the content area that will show or hide dynamically.</div>
+
+  <script>
+    $(document).ready(function () {
+      $("#showBtn").click(function () {
+        $("#output").show(500); // Shows with animation
+      });
+
+      $("#hideBtn").click(function () {
+        $("#output").hide(500); // Hides with animation
+      });
+
+      $("#toggleBtn").click(function () {
+        $("#output").toggle(500); // Toggles visibility
+      });
+    });
+  </script>
+</body>
+
+</html>

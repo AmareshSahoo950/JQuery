@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery map()</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    body {
+      background-color: rgb(224, 224, 224);
+      font-size: 1.5rem;
+    }
+
+    #result {
+      background-color: yellowgreen;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #9C27B0;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      color: black;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Fruit List</h2>
+  <ul>
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Cherry</li>
+  </ul>
+  <button id="showArray">Show Array</button>
+  <p id="result"></p>
+  <script>
+    $('#showArray').click(function () {
+      var fruits =
+        $("li").map(function () {
+          return $(this).text();
+        }).get();
+
+      $('#result').text('Array: ' + JSON.stringify(fruits));
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    background-color: rgb(224, 224, 224);
+    font-size: 1.5rem;
+  }
+
+  #desc {
+    background-color: rgb(255, 255, 153);
+    text-wrap: wrap;
+    margin: 40px 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  #box {
+    background-color: rgb(160, 255, 255);
+    width: 400px;
+    height: 150px;
+    margin: 40px 10px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 150px;
+    position: relative;
+    transition: all 0.3s ease;
+    text-wrap: none;
+  }
+
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #27b03e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: black;
+    font-weight: bold;
+  }
+</style>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <h2>Method Chaining</h2>
+
+  <div id="desc">
+    Method Chaining allows multiple jQuery actions to run sequentially on the same element.<br>
+    Example: <code>$("#box").css("color","blue").slideUp(500).slideDown(500);</code><br>
+    It improves performance, reduces code repetition, and makes scripts cleaner and faster.
+  </div>
+
+  <button id="chainBtn">Run Chained Effects</button>
+  <div id="box">Chaining </div>
+
+  <script>
+    $(document).ready(function () {
+      $("#chainBtn").click(function () {
+        $("#box")
+          .css("color", "orange")
+          .css("font-weight", "bold")
+          .slideUp(500)
+          .slideDown(500)
+          .animate({ left: "350px", opacity: 0.7 }, 800)
+          .animate({ left: "0px", opacity: 1 }, 800)
+          .fadeOut(500)
+          .fadeIn(500);
+      });
+    });
+  </script>
+</body>
+
+</html>

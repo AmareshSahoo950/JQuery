@@ -1,0 +1,96 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>on() and off() Method</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .boxbg {
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lecture - 14</h1>
+
+  <div class="box" id="main-box">
+    <h1>on() and off() Method</h1>
+    <hr>
+    <p>
+      on() is used to write multiple events and their function together in a single go. <br>
+      off() is used to remove events. <br>
+      The syntax is :
+    </p>
+
+    <p>
+      $('.box').on({ <br>
+      <br>
+      click:function(){},<br><br>
+      mouseenter:function(){}<br><br>
+      });<br><br><br>
+
+      $('button').click(function () { <br><br>
+      $('.box').off('mouseover mouseout'); <br><br>
+      }) <br><br>
+    </p>
+    <hr><br>
+  </div>
+
+  <center>
+    <button>Remove mouseover</button>
+  </center>
+
+  <script>
+    $(document).ready(function () {
+
+      //single event and functionality.
+
+      // $('.box').on('click', function() {
+      //       $(this).css('background', 'linear-gradient(45deg, blue, green)'
+      //  )};
+      // });
+
+
+      // multiple events in single line.
+
+      // $('.box').on('mouseover mouseout', function () {
+      //   $(this).toggleClass('boxbg');
+      //   });
+      // });
+
+
+      // main usage of on()
+
+      $('.box').on({
+
+        'click': function () {
+          $(this).css('background-color', 'orange')
+        },
+
+        'mouseover': function () {
+          $(this).css('background-color', 'lightpink')
+        },
+
+        'mouseout': function () {
+          $(this).css('background-color', 'lightblue')
+        }
+
+
+      });
+
+      $('button').click(function () {
+        $('.box').off('mouseover mouseout');
+      })
+    });
+  </script>
+
+</body>
+
+</html>

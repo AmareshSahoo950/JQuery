@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <title>DOM Traversing - Descendants</title>
+  <style>
+    .container {
+      margin: 20px;
+      padding: 15px;
+      border: 2px solid #333;
+    }
+
+    .level1,
+    .level2,
+    .level3 {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #999;
+    }
+
+    .level1 {
+      background-color: #bbdefb;
+    }
+
+    .level2 {
+      background-color: #c8e6c9;
+    }
+
+    .level3 {
+      background-color: #ffecb3;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>DOM Traversing: Descendants</h2>
+  <hr>
+  <div class="container">
+    Root
+    <div class="level1">
+      Level 1
+      <div class="level2">
+        Level 2
+        <div class="level3">Level 3</div>
+      </div>
+    </div>
+  </div>
+  <button id="childrenBtn">Children</button>
+  <button id="findBtn">Find level2</button>
+
+  <script>
+    $(document).ready(function () {
+      $('#childrenBtn').click(function () {
+        $('.container').children().css('font-weight', 'bold');
+      });
+      $('#findBtn').click(function () {
+        $('.container').find('.level2').css('border', '3px solid green');
+      });
+    });
+  </script>
+</body>
+
+</html>

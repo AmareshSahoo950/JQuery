@@ -1,0 +1,82 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>Advance Selectors</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <h1>Lecture - 5</h1>
+  <div class="box">
+    <h1>Test Box</h1>
+    <p> There are many more selectors like : <br>
+
+      li:lt(4)  less than 4 <br>
+      li:gt(2) greater than 2  <br>
+      li:eq(2) targets the 3rd element or 2nd index <br>
+      li:first-child / li:first targets the first element of a div or ul. <br>
+      li:last targets the last element</p>
+  </div>
+
+  <ul id="list">
+    <li>Orange</li>
+    <li>Banana</li>
+    <li>Grapes</li>
+    <li>Apple</li>
+    <li>Guava</li>
+    <li>Papaya</li>
+    <li>Winter Melon</li>
+  </ul>
+
+  <script>
+    $('document').ready(function () {
+
+      $('*')
+        .css('border', '1px solid black')
+
+      $('#list')
+        .css('color', 'red')
+        .css('border', '2px solid red')
+        .css('width', '150px')
+        .css('padding', '10px 40px')
+        .css('margin', '10px 40px');
+
+      $('#list li')
+        .css('color', 'black')
+        .css('border', '2px solid green');
+
+      $('#list li:first')
+        .css('border', '2px solid orange');
+
+      $('#list li:eq(2)')
+        .css('border', '2px solid lightgreen');
+
+      $('#list li:gt(2)')
+      .css('border', '2px solid yellow');
+      
+      $('#list li:last')
+      .css('border', '2px solid lightblue');
+
+      /* 
+        There are many more selectors like :
+
+        li:lt(4)  less than 4
+        li:gt(2) greater than 2 
+        li:eq(2) targets the 3rd element or 2nd index
+        li:first-child / li:first targets the first element of a div or ul.
+        li:last targets the last element
+        
+      */
+
+    });
+  </script>
+</body>
+
+</html>

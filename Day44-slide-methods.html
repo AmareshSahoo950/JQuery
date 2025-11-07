@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    background-color: rgb(224, 224, 224);
+    font-size: 1.5rem;
+  }
+
+  #desc {
+    background-color: rgb(126, 221, 255);
+    text-wrap: wrap;
+    margin: 40px 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  #panel {
+    background-color: rgb(255, 245, 160);
+    text-wrap: wrap;
+    margin: 40px 10px;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+  }
+
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font: bold 1.2rem arial, sans-serif;
+    background-color: #21c800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: black;
+    font-weight: bold;
+  }
+</style>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <h2>Slide Effects in jQuery</h2>
+
+  <div id="desc">
+    slideDown() → Expands the height of an element to make it visible.<br>
+    slideUp() → Collapses the height to hide an element.<br>
+    slideToggle() → Alternates between sliding up and down.<br>
+  </div>
+
+  <button id="downBtn">Slide Down</button>
+  <button id="upBtn">Slide Up</button>
+  <button id="toggleBtn">Slide Toggle</button>
+
+  <div id="panel">This panel slides up and down smoothly to demonstrate sliding effects.</div>
+
+  <script>
+    $(document).ready(function () {
+      $("#downBtn").click(function () {
+        $("#panel").slideDown(800, function () {
+          alert("Panel is now visible!");
+        });
+      });
+
+      $("#upBtn").click(function () {
+        $("#panel").slideUp(800, function () {
+          alert("Panel is now hidden!");
+        });
+      });
+
+      $("#toggleBtn").click(function () {
+        $("#panel").slideToggle(800);
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>Get Method</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <h1>Lecture - 10</h1>
+
+  <div class="box" id="main-box">
+    <h1>Get Method</h1>
+    <hr>
+    <p>
+      This method is used to get the value of elements in the HTML DOM Tree
+      There are 4 Get Methods that is :
+    </p>
+
+    <ul>
+      <li> text() - fetches innertext of an element</li>
+      <li> html() - fetches innerHTML of an element</li>
+      <li> attr() - fetches attribute of an element</li>
+      <li> val() - fetches value of an form element</li>
+    </ul>
+
+    <hr>
+    <br>
+    <form action="" id="sform">
+      <label for="name">Name </label> <input type="text" id="name"><br><br>
+      <label for="class">Class </label><input type="text" id="class"><br><br>
+      <label for="country">Country </label>
+      <select id="country">
+        <option value="India">India</option>
+        <option value="Russia">Russia</option>
+        <option value="USA">USA</option>
+        <option value="China">China</option>
+      </select><br><br>
+      <input type="submit">
+      <br><br>
+    </form>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      const boxHtml = $('.box').html();
+      console.log(boxHtml);
+      const boxText = $('.box').text();
+      console.log(boxText);
+      const boxAttr = $('.box').attr('id');
+      console.log(boxAttr);
+
+      $('#sform').submit(function () {
+        const name = $('#name').val();
+        const className = $('#class').val();
+        const countryName = $('#country').val();
+        console.log(name);
+        alert('Hello ' + name + ' Class : ' + className + ' country : ' + countryName);
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>

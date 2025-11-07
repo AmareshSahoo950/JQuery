@@ -1,0 +1,83 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>replaceWith( ) and replaceAll( )</title>
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    button {
+      font-size: 1rem;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      background-color: rgb(216, 255, 187);
+      margin: auto;
+      display: block;
+    }
+
+    .box-2 {
+      padding: 20px;
+      margin: 20px;
+      width: 80%;
+      background: linear-gradient(90deg, lightpink, lightblue);
+    }
+
+    hr {
+      height: 3px;
+      background: linear-gradient(90deg, rgb(23, 255, 100), rgb(255, 249, 183));
+      border: none;
+    }
+
+    button {
+      margin: 20px auto;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Lecture - 19</h1>
+  <h2>replaceWith() and replaceAll()</h2>
+  <hr>
+
+  <div class="box">
+    <p>replaceWith() is used to replace an tag or simply content with another tag. Here first selector is written then
+      content is written.</p>
+    <p>replaceAll() is used to replace a tag with another or all tags. Here first content is written then selector
+      comes.</p>
+  </div>
+
+  <div class="box-2" id="main-box">
+    <p>Main-Box Paragraph - 1</p>
+    <p>Main-Box Paragraph - 2</p>
+    <p>Main-Box Paragraph - 3</p>
+  </div>
+
+  <button id="replaceWithBtn">Replace With</button>
+  <button id="replaceAllBtn">Replace All</button>
+
+  <script>
+    $(document).ready(function () {
+      $('#replaceWithBtn').click(function () {
+        $('#main-box p:nth-child(1)').replaceWith('<h3>Replace With working.</h3>')
+      });
+
+      $('#replaceAllBtn').click(function () {
+        $('<h3>Replace All working.</h3>').replaceAll('#main-box p');
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>

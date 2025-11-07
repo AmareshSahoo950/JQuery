@@ -1,0 +1,81 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>Add, Remove, Toggle Class</title>
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    #bg-setter {
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      color: rgb(120, 120, 120);
+      cursor: pointer;
+      background: linear-gradient(45deg, rgba(0, 200, 255, 0.885), rgba(23, 255, 116, 0.848));
+    }
+
+    .text-color {
+      color: rgb(255, 46, 46);
+    }
+
+    .background {
+      background: linear-gradient(40deg, rgb(0, 128, 255), rgb(110, 255, 112));
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lecture - 12</h1>
+
+  <div class="box" id="main-box">
+    <h1>Add, Remove and Toggle Class</h1>
+    <hr>
+    <p>
+      We have 3 Classes :
+    </p>
+    <ul>
+      <li>addClass()</li>
+      <li>removeClass()</li>
+      <li>toggleClass()</li>
+    </ul>
+
+
+    <button class="bg-setter" id="add-class">Add Class </button>
+    <button class="bg-setter" id="remove-class">Remove Class</button>
+    <button class="bg-setter" id="toggle-class">Toggle Class</button>
+
+    <hr>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+
+      $('#add-class').click(function () {
+        $('.box h1').addClass('background text-color');
+        $('#add-class').toggleClass('background')
+      })
+
+      $('#remove-class').click(function () {
+        $('.box h1').removeClass('text-color');
+        $('#remove-class').toggleClass('background')
+      })
+
+      $('#toggle-class').click(function () {
+        $('.box ul').toggleClass('background');
+        $('#toggle-class').toggleClass('background')
+      })
+    });
+  </script>
+
+</body>
+
+</html>

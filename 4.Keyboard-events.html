@@ -1,0 +1,58 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>Keyboard Events</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <h1>Lecture - 7</h1>
+  <div class="box">
+    <h1>Test Box</h1>
+    <p>
+      There are 3 keyboard Events that is : <br>
+      keypress() <br>
+      keydown() <br>
+      keyup()
+    </p>
+  </div>
+
+
+  <script>
+    $('document').ready(function () {
+      $('body').keypress(function (e) {
+        console.log('keypress : ', e.originalEvent.key)
+        if (e.originalEvent.key === 'p') {
+          $('.box')
+            .css('background-color', 'orange');
+        }
+      })
+
+      $('body').keyup(function (e) {
+        if (e.originalEvent.key === 'u') {
+          console.log('keyup : ', e.originalEvent.key)
+          $(this)
+            .css('background-color', 'lightblue');
+        }
+      })
+
+      $('body').keydown(function (e) {
+        if (e.originalEvent.key === 'd') {
+          console.log('keydown : ', e.originalEvent.key)
+          $(this)
+            .css('background-color', 'lightgreen');
+        }
+      })
+
+    });
+  </script>
+</body>
+
+</html>

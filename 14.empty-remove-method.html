@@ -1,0 +1,64 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>empty() and remove() Method</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    button {
+      font-size: 1.4rem;
+      font-weight: bold;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      background-color: rgb(46, 231, 255);
+    }
+
+    .box {
+      width: 80%;
+      height: 25vh;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lecture - 17</h1>
+
+  <div class="box" id="main-box">
+    <h2>empty() and remove() Method</h2>
+    <hr>
+    <p>
+      <b> empty() is used to empty the content of an element. <br>
+        remove() is used to remove an element using JQuery. <br><br>
+      </b>
+    </p>
+  </div>
+
+  <center>
+    <button id="emptyBtn">Empty</button>
+    <button id="removeBtn">Remove</button>
+  </center>
+
+  <script>
+    $(document).ready(function () {
+
+      $('#emptyBtn').click(function () {
+        $('.box').empty();
+      })
+
+      $('#removeBtn').click(function () {
+        $('.box').remove();
+      })
+    });
+  </script>
+
+</body>
+
+</html>

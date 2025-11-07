@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    th,
+    td {
+      border: 1px solid #222;
+      padding: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <table style="border-collapse:collapse;width:70%;">
+    <tr>
+      <th>Name</th>
+      <th>Phone 1</th>
+      <th>Phone 2</th>
+    </tr>
+    <tr>
+      <td>Rahul</td>
+      <td>9876543210</td>
+      <td>9123456780</td>
+    </tr>
+    <tr>
+      <td>Priya</td>
+      <td>8888777700</td>
+      <td>9999887770</td>
+    </tr>
+  </table>
+  <hr>
+
+  <select size="5">
+    <option>Audi</option>
+    <option>BMW</option>
+    <option>Tata</option>
+    <option>Mahindra</option>
+    <option>Maruti</option>
+    <option>Mercedes</option>
+    <option>Honda</option>
+    <option>Hyundai</option>
+    <option>Suzuki</option>
+    <option>VW</option>
+  </select>
+
+  <hr>
+
+  <form id="loginForm" onsubmit="validateLogin()">
+    USERID: <input type="text" id="userid" name="userid" required><br>
+    PASSWORD: <input type="password" id="password" name="password" required><br>
+    <button type="submit">Login</button>
+  </form>
+
+  <form onsubmit="roots();return false;">
+    <input id="a"> <input id="b"> <input id="c">
+    <button>Roots</button>
+  </form>
+
+  <hr>
+
+  <button onclick="showAlert()">Click</button>
+  <script>
+    function showAlert() {
+      alert("First");
+      setTimeout(function () {
+         alert("Second"); }, 100);
+    }
+  </script>
+
+
+  <script>
+    function roots() {
+      var a = document.getElementById('a').value,
+        b = document.getElementById('b').value,
+        c = document.getElementById('c').value,
+        d = b * b - 4 * a * c;
+      if (d < 0) alert("Imaginary");
+      else alert("Roots: " + ((-b + Math.sqrt(d)) / (2 * a)) + " & " + ((-b - Math.sqrt(d)) / (2 * a)));
+    }
+  </script>
+
+  <script>
+
+    document.write(new Date().toLocaleTimeString());
+
+
+    function validateLogin() {
+      const user = document.getElementById('userid').value.trim();
+      const pass = document.getElementById('password').value;
+
+      if (user === '' || pass === '') {
+        alert('Both fields are required.');
+        return false;
+      }
+      if (pass.length < 6) {
+        alert('Password must be at least 6 characters.');
+        return false;
+      }
+      // Optional: pattern check — at least one letter and one digit
+      const pattern = /(?=.*[A-Za-z])(?=.*\d).{6,}/;
+      if (!pattern.test(pass)) {
+        alert('Password must contain letters and digits.');
+        return false;
+      }
+      return true; // allow submission
+    }
+
+
+    let cars = ["Audi", "BMW", "Tata", "Mahindra"];
+    document.write(cars.join(" | ")); // Horizontal
+
+    for (let c of cars) document.write("<br>" + c); // Vertical
+
+
+
+  </script>
+
+</body>
+
+</html>

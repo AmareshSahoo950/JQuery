@@ -1,0 +1,69 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>clone( )</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    button {
+      font-size: 1rem;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      background-color: rgb(216, 255, 187);
+      cursor: pointer;
+    }
+
+    #box-2 {
+      padding: 20px;
+      width: 80%;
+      background: linear-gradient(90deg, lightpink, rgba(35, 255, 127, 0.662));
+    }
+
+    hr {
+      height: 3px;
+      background: linear-gradient(90deg, rgb(23, 255, 100), rgb(255, 238, 54), rgb(71, 57, 255));
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lecture - 19</h1>
+
+  <div class="box" id="main-box">
+    <h2>clone()</h2>
+    <hr>
+    <p>
+      clone() is used to clone the content of one element to another.
+    </p>
+  </div>
+  <div class="box" id="box-2">
+    <hr>
+    This is another div.
+    <hr>
+  </div>
+
+  <center>
+    <button id="cloneBtn">Clone</button>
+  </center>
+
+  <script>
+    $(document).ready(function () {
+
+      $('#cloneBtn').click(function () {
+        // $('#main-box').clone().prependTo('#box-2');
+        $('#main-box h2').clone().prependTo('#box-2');
+        $('#main-box p').clone().appendTo('#box-2');
+      });
+    });
+  </script>
+
+</body>
+</html>

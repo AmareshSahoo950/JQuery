@@ -1,0 +1,16 @@
+.box {
+  border: 2px solid black;
+  border-radius: 7px;
+  padding:0 20px;
+  font-size: clamp(1rem, 1vw, 2rem);
+  margin: 20px 10px;
+  display: inline-block;
+}
+
+#first-box{
+  background-color: rgba(226, 162, 0, 0.7);
+}
+
+#second-box{ 
+  background-color: rgba(166, 226, 0, 0.7);
+}

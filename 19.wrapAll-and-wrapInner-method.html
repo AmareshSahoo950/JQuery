@@ -1,0 +1,66 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>wrap( ) and unwrap( )</title>
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    button {
+      font-size: 1rem;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      background-color: rgb(216, 255, 187);
+      margin: 20px;
+      cursor: pointer;
+      display: block;
+    }
+
+    #test-div {
+      background-color: rgba(255, 193, 203, 0.793);
+      padding: 20px 30px;
+      margin: 5px;
+      border: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Lecture - 21</h1>
+  <h2>wrapAll() and wrapInner()</h2>
+  <hr>
+
+  <div class="box">
+    <h2>Definition</h2>
+    <p>wrapAll() -> wraps all the elements inside a single tag instead of wrapping them individually.</p>
+    <p>wrapInner() -> wraps an element from inside of parent element. Opposite to wrap.</p>
+  </div>
+
+  <button id="wrapAllBtn">WrapAll</button>
+  <button id="wrapInnerBtn">WrapInner</button>
+
+  <script>
+    $(document).ready(function () {
+      $('#wrapAllBtn').click(function () {
+        $('p').wrapAll('<div id="test-div"></div>')
+      });
+
+      $('#wrapInnerBtn').click(function () {
+        $('h2').wrapInner('<span style="color:red"></span>');
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>

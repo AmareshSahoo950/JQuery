@@ -1,0 +1,154 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>Window Events</title>
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    body {
+      height: 2000px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #overflow-box {
+      background-color: lightseagreen;
+      padding: 0 15px;
+      text-align: justify;
+      width: 400px;
+      height: 250px;
+      overflow-y: scroll;
+      border: 2px solid black;
+      border-radius: 4px;
+    }
+
+    #para {
+      text-align: justify;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lecture - 9</h1>
+  <div class="box">
+    <h1>Window Events</h1>
+    <hr>
+    <p>
+      There are 2 Window Events that is :
+    <ul>
+      <li> load() Removed in version 3.0, load() is replaced with document.ready(function(){}) </li>
+      <li> unload() Removed in version 3.0, works when the site is closed.</li>
+      <li> resize()</li>
+      <li> scroll()</li>
+    </ul>
+    </p>
+  </div>
+
+  <div id="overflow-box">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae iure, inventore quaerat, quam perferendis
+      aliquam qui nobis, ducimus quas minima debitis asperiores blanditiis possimus atque praesentium dolor deserunt
+      voluptates nemo.
+      Vel aut quibusdam voluptatibus suscipit ex, esse praesentium reiciendis maiores quis quam minima facere molestias
+      cumque earum error ab deleniti ut quos accusantium. Fugit, aliquam blanditiis! Modi impedit asperiores quisquam!
+      Voluptatum obcaecati quam rerum perferendis sint architecto nobis error. Error ab et nemo vel architecto labore
+      porro voluptates nisi eligendi quaerat nulla, recusandae, molestias quibusdam doloremque repellendus natus vero
+      eaque.
+      Expedita explicabo vel impedit, error ad similique in omnis! Praesentium reiciendis, optio illo voluptatem ipsa
+      vitae rem officiis aut suscipit fuga iusto voluptate doloremque veritatis dolorem dolores eaque quos eum?
+      Deleniti ipsam qui quia nesciunt ea, nisi aspernatur veniam, blanditiis eum, et eligendi placeat nulla quasi
+      mollitia dicta. In eaque nihil doloribus rerum itaque soluta asperiores tempore vel architecto quae.
+      Explicabo eveniet asperiores facere sit qui deserunt, cumque voluptates iure quaerat quis culpa. Repellat quas,
+      ratione harum exercitationem quibusdam laudantium culpa quidem cum nam minima molestias consectetur quae
+      reprehenderit possimus.
+      Porro molestias atque consequuntur natus impedit, cum cupiditate itaque inventore culpa mollitia odio maxime,
+      soluta sed dolor aliquid sapiente quod nulla tempora corrupti? Inventore, quod officia? Possimus inventore atque
+      at?
+      Fugit vel animi corrupti vero labore eveniet, minima odit, officia illo quisquam voluptas optio. Inventore quas
+      placeat harum. Praesentium laudantium quaerat nam eos tempora dolorum aliquam blanditiis harum natus nesciunt.
+      Magni dolores sed debitis ea quam. Reprehenderit, nihil accusantium ab aliquam perspiciatis a autem iusto
+      consequatur temporibus vel suscipit iure ratione! Laboriosam quod ipsum magnam et enim quas fugiat animi?
+      Nostrum exercitationem in ad soluta laborum id obcaecati tenetur suscipit delectus voluptas expedita mollitia ipsa
+      cumque, vel enim doloremque veritatis iusto sunt accusantium ab autem cupiditate, molestias nisi. Doloribus,
+      dolorum.</p>
+  </div>
+
+  <div id="para">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, quam. Alias sequi porro laborum, nulla possimus
+      soluta corrupti beatae dolor officiis aut dolores rem veniam a voluptate ratione, sint ex!
+      Quam aliquam asperiores excepturi, harum consequatur consequuntur exercitationem tenetur fugiat pariatur ex quas
+      eum repellat deserunt repellendus laudantium magnam animi minima ut dolorum molestiae impedit? Corporis impedit
+      nisi vero repudiandae.
+      Exercitationem nostrum natus modi delectus, sequi et corporis nisi eius qui ipsum ipsa pariatur, tempora in
+      distinctio excepturi quam! Molestiae exercitationem quis labore expedita laudantium, dignissimos praesentium
+      consequuntur atque impedit.
+      Provident, sunt repellendus. Repellat quisquam ipsa provident commodi repudiandae corporis est vero quo quia ea
+      doloribus aliquam molestias perspiciatis, eveniet ab velit in accusantium ad fugiat assumenda blanditiis veniam!
+      Odit!
+      Nisi molestiae totam aspernatur optio natus dolor harum eveniet officia error delectus accusantium sint dolores
+      corrupti iure consectetur, earum quaerat consequuntur ducimus provident vel, recusandae quae autem repudiandae
+      quas! Enim?
+      Ab omnis necessitatibus, assumenda recusandae nobis voluptatibus tenetur exercitationem dolor numquam quos
+      obcaecati pariatur ducimus dolore odit! Aliquam laboriosam veritatis esse soluta fugiat, aut ut. Voluptatem nam
+      fugit nihil eaque.
+      Repellendus obcaecati, hic vero quibusdam earum quia dolorum quasi laborum ea corrupti rerum esse sed consequatur
+      fuga accusantium. Ducimus ea ab iste soluta non expedita officiis qui voluptatum aut ipsam.
+      Voluptatum, architecto sint perspiciatis dolorem vel odit sit, consectetur obcaecati, soluta sequi voluptate
+      corporis. Culpa, sapiente veniam. Deserunt, voluptas sit minus dolorem sunt repudiandae accusamus nesciunt
+      provident id et nam?
+      Aliquid est reiciendis saepe consectetur neque beatae impedit! Doloremque, cum? Necessitatibus modi ex totam
+      accusamus doloribus voluptatibus nobis corporis consectetur voluptatum, quod sit corrupti magni dicta officiis
+      pariatur quas impedit.
+      Fugiat sed, quasi eum recusandae, deleniti asperiores inventore laudantium magni hic ab, laborum mollitia
+      excepturi doloribus. Earum facere, magni, nesciunt tenetur sapiente dicta at rem eligendi totam quibusdam sed est.
+      Minus quaerat aliquid aliquam voluptas incidunt hic asperiores magni, dicta labore voluptatum tempora consectetur
+      suscipit ex eligendi. Tenetur aperiam, cum similique alias rem dolorem atque quisquam sit? Necessitatibus,
+      excepturi quo.
+      Facilis fugiat fugit ipsum inventore vel, suscipit architecto autem debitis cupiditate provident error, facere
+      labore aliquid, velit delectus asperiores! Distinctio corrupti delectus amet. Optio asperiores officia accusamus
+      expedita iste consectetur.
+      Qui, labore? Nesciunt eligendi, asperiores dolorum ratione dolores id repudiandae ex inventore. Repudiandae, ipsum
+      sit. Deleniti saepe debitis id vel dolores consequatur distinctio voluptas cumque possimus. Tempora asperiores
+      possimus corrupti.
+      Iure eum fuga nesciunt dolorum ipsum, est dicta error eius, veniam nobis porro cumque. Quam perferendis ipsum
+      sequi laboriosam incidunt nam eum quibusdam. Sed porro blanditiis distinctio et quod expedita?
+      Odit, quo quibusdam. Corporis vero dolorem veniam autem quasi, aperiam soluta repellat molestias et blanditiis
+      exercitationem reprehenderit architecto nisi eveniet enim officiis omnis porro debitis perspiciatis amet. Quidem,
+      vel a!
+      Eaque saepe molestiae quas accusantium atque, voluptatum fugiat hic aliquid impedit ducimus laboriosam! Quae
+      dolores vitae, molestias commodi error quo consectetur, esse saepe repudiandae maiores beatae quasi voluptatum
+      numquam recusandae?
+      Dignissimos dolores laboriosam quo ab. Minima, corrupti quas placeat incidunt quibusdam a ex, commodi adipisci
+      libero dolor mollitia dolorum fuga id, dolores quae itaque ipsum! Eius libero ad sunt in.
+    </p>
+  </div>
+
+
+  <script>
+    $(document).ready(function () {
+      $('#overflow-box').scroll(function () {
+        console.log('scrolling');
+      })
+      $(window).resize(function () {
+        console.log('resizing window - width :', window.visualViewport.width, 'height : ', window.visualViewport.height);
+      })
+
+      // $(window).load(function () {
+      // console.log('works similar to ready()');
+      // })
+      // $(window).unload(function () {
+      // console.log('triggers when the site is closed.');
+      // })
+    });
+  </script>
+</body>
+
+</html>

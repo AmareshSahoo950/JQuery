@@ -1,0 +1,99 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>height( ) and width( )</title>
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    .box {
+      display: block;
+      margin: 50px;
+      padding: 40px;
+      border: 20px solid black;
+      background-color: rgba(153, 255, 0, 0.276);
+    }
+
+    span {
+      padding: 1px 5px;
+      border: 1px solid black;
+      color: rgb(164, 77, 0);
+      font-weight: bold;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      background-color: rgb(73, 206, 40);
+      margin: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lecture - 22</h1>
+  <h2>All the height() and width() related methods</h2>
+  <hr>
+
+  <div class="box">
+    <h2>Definition</h2>
+    <p id="width">width() -> get/set the width of the content. <span> 0 </span></p>
+    <p id="innerWidth">innerWidth() -> get/set the width of the content + padding. <span> 0 </span></p>
+    <p id="outerWidth">outerWidth() -> get/set the width of the content + padding + border-width. <span> 0 </span></p>
+    <p id="outerWidthT">outerWidth(true) -> returns the width of the content + padding + border-width + margin. <span> 0
+      </span></p>
+    <hr>
+    <p id="height">height() -> get/set the height of the content. <span> 0 </span></p>
+    <p id="innerHeight">innerHeight() -> get/set the height of the content + padding. <span> 0 </span></p>
+    <p id="outerHeight">outerHeight() -> get/set the height of the content + padding + border-width. <span> 0 </span>
+    </p>
+    <p id="outerHeightT">outerHeight(true) -> returns the height of the content + padding + border-width + margin.
+      <span> 0 </span>
+    </p>
+  </div>
+
+  <button id="widthBtn">Width</button>
+  <button id="heightBtn">Height</button>
+
+  <div
+    style="display: flex; justify-content: space-around; flex-wrap: wrap;gap: 20px; border: 2px solid black; background-color: gray;">
+    <img src="assets/20.height_width/widths.png" width="600px" alt="height diagram">
+    <img src="assets/20.height_width/heights.png" width="600px" alt="width diagram">
+  </div>
+
+  <script>
+    $(document).ready(function () {
+
+      $('#widthBtn').click(function () {
+        //  $('.box').width('500px')   //Set the width 
+        $('#width span').text($('.box').width())
+        $('#innerWidth span').text($('.box').innerWidth())
+        $('#outerWidth span').text($('.box').outerWidth())
+        $('#outerWidthT span').text($('.box').outerWidth(true))
+      });
+
+      $('#heightBtn').click(function () {
+        //  $('.box').height('500px')  //Set the height
+        $('#height span').text($('.box').height())
+        $('#innerHeight span').text($('.box').innerHeight())
+        $('#outerHeight span').text($('.box').outerHeight())
+        $('#outerHeightT span').text($('.box').outerHeight(true))
+      });
+
+    });
+
+
+  </script>
+
+</body>
+
+</html>

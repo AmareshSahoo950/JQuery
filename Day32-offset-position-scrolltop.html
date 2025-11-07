@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>Position( ), offset( ) and scrollTop( )</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    button {
+      font-size: 1rem;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      background-color: rgb(216, 255, 187);
+      margin: 20px;
+      cursor: pointer;
+    }
+
+    #box {
+      display: block;
+      margin: 50px;
+      padding: 40px;
+      border: 20px solid black;
+      background-color: rgba(153, 255, 0, 0.276);
+      height: 150px;
+      overflow: auto;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>position(), offset() & scrollTop()</h2>
+  <div id="box">
+    <p> position() → Gets the top and left position of an element relative to its parent.</p>
+    <p> offset() → Returns the position of an element relative to the document.</p>
+    <p> scrollTop() → Gets or sets the vertical scroll position of an element.</p>
+    <p style="margin-top:100px;">
+    <h3>Scrolled down to bottom.</h3>
+    </p>
+  </div>
+  <button id="offsetBtn">Fetch Offset of Heading</button>
+  <button id="ScrollBtn">Click To scrollTop</button>
+
+
+  <script>
+    $(document).ready(function () {
+      $("#offsetBtn").click(function () {
+        $("h2").css({ "color": "red", "font-size": "22px" });
+        let pos = $("h2").offset();
+        alert("Top: " + pos.top + " | Left: " + pos.left);
+      });
+
+      $("#ScrollBtn").click(function () {
+        $("#box").scrollTop(120);
+        alert("Box top position: " + $("#box").position().top);
+      });
+    });
+  </script>
+
+</body>
+
+</html>

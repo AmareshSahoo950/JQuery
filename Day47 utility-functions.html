@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    background-color: #f0f0f0;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 1.1rem;
+    padding: 20px;
+  }
+
+  h2 {
+    color: #007acc;
+  }
+
+  #desc {
+    background-color: #fff9c4;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+    line-height: 1.6;
+  }
+
+  #output {
+    background-color: #e1bee7;
+    padding: 15px;
+    border-radius: 10px;
+    white-space: pre-line;
+    margin-top: 20px;
+  }
+
+  button {
+    background-color: #007acc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #004d80;
+  }
+</style>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <h2>Day 47 - jQuery Utility Functions</h2>
+
+  <div id="desc">
+    🔹 <b>$.each()</b> – Iterates over arrays or objects.<br>
+    🔹 <b>$.map()</b> – Transforms each array element and returns a new array.<br>
+    🔹 <b>$.grep()</b> – Filters arrays based on conditions.<br>
+    🔹 <b>$.extend()</b> – Merges multiple objects into one.<br>
+    🔹 <b>$.trim()</b> – Removes leading/trailing whitespace from strings.
+  </div>
+
+  <button id="runBtn">Run Utility Functions</button>
+
+  <div id="output"></div>
+
+  <script>
+    $(document).ready(function () {
+      $("#runBtn").click(function () {
+        let result = "";
+
+        // $.each()
+        const fruits = ["Apple", "Banana", "Cherry"];
+        result += "$.each() →\n";
+        $.each(fruits, function (index, value) {
+          result += index + ": " + value + "\n";
+        });
+
+        const nums = [1, 2, 3, 4];
+
+        // $.map()
+        const squared = $.map(nums, function (n) { return n * n; });
+        result += "\n $.map() → Squared values: " + squared.join(", ") + "\n";
+
+        // $.grep() 
+        const even = $.grep(nums, function (n) { return n % 2 === 0; });
+        result += "\n $.grep() → Even numbers: " + even.join(", ") + "\n";
+
+        // $.extend() 
+        const obj1 = { name: "Amaresh", skill: "Coding" };
+        const obj2 = { hobby: "Hacking", city: "Bhubaneswar" };
+        const merged = $.extend({}, obj1, obj2);
+        result += "\n $.extend() → Merged Object: " + JSON.stringify(merged) + "\n";
+
+        // $.trim() 
+        const messy = "   Hello jQuery!   ";
+        result += "\n $.trim() → '" + $.trim(messy) + "'\n";
+
+        $("#output").text(result);
+      });
+    });
+  </script>
+</body>
+
+</html>

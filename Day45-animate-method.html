@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    background-color: rgb(224, 224, 224);
+    font-size: 1.4rem;
+  }
+
+  #desc {
+    background-color: rgb(126, 221, 255);
+    text-wrap: wrap;
+    margin: 40px 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  #box {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(160, 174, 255);
+    border-radius: 10px;
+    margin: 40px 10px;
+    position: relative;
+  }
+
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font: bold 1.2rem arial, sans-serif;
+    background-color: #21c800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: black;
+    font-weight: bold;
+  }
+</style>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <h2>Day - 45 Custom Animations</h2>
+
+  <div id="desc">
+    animate() → Creates custom animations by modifying numeric CSS properties like width, height, position, or
+    opacity.<br>
+    stop() → Halts ongoing animations immediately to prevent animation queue buildup.<br><br>
+    Example: <code>$("#box").animate({ left: "200px", opacity: 0.5 }, 1000);</code>
+  </div>
+
+  <button id="animateBtn">Animate</button>
+  <button id="stopBtn">Stop</button>
+
+  <div id="box"></div>
+
+  <script>
+    $(document).ready(function () {
+      $("#animateBtn").click(function () {
+        $("#box").animate({
+          left: "300px",
+          width: "250px",
+          height: "250px",
+          opacity: 0.5
+        }, 2000).animate({
+          left: "0px",
+          width: "150px",
+          height: "150px",
+          opacity: 1
+        }, 4000);
+      });
+
+      $("#stopBtn").click(function () {
+        $("#box").stop(); 
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>append() and prepend() Method</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    button {
+      font-size: 1rem;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      background-color: rgb(46, 231, 255);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lecture - 15</h1>
+
+  <div class="box" id="main-box">
+    <h1>append() and prepend() Method</h1>
+    <hr>
+    <p>
+      append() is used to append an element at the end of an element. <br>
+      prepend() is used to insert an element at the beginning of another element. <br>
+    </p>
+    <ol>
+      <li>Item - 1</li>
+      <li>Item - 2</li>
+      <li>Item - 3</li>
+      <li>Item - 4</li>
+      <li>Item - 5</li>
+    </ol>
+  </div>
+
+  <center>
+    <button id="appendBtn">Append</button>
+    <button id="prependBtn">prepend</button>
+  </center>
+
+  <script>
+    $(document).ready(function () {
+
+      $('#appendBtn').click(function () {
+        // $('.box').append('<h2>Appended Text</h2>');
+        $('ol').append('<li>Appended Item</li>');
+      })
+
+      $('#prependBtn').click(function () {
+        // $('.box').prepend('<h3>Prepended Text</h3>');
+        $('ol').prepend('<li>Prepended Item</li>');
+      })
+    });
+  </script>
+
+</body>
+
+</html>

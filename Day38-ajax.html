@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery AJAX</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    body {
+      background-color: rgb(224, 224, 224);
+      font-size: 1.5rem;
+    }
+
+    #output {
+      background-color: yellowgreen;
+      text-wrap: wrap;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #9C27B0;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      color: black;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>AJAX Demo</h2>
+  <button id="fetch">Fetch Post</button>
+  <pre id="output"></pre>
+  <script>
+    $('#fetch').click(function () {
+      $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/posts',
+        type: 'GET',
+        success: function (data) {
+          $('#output').text(JSON.stringify(data, null, 2));
+        },
+        error: function (err) {
+          $('#output').text('Error: ' + err.status);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

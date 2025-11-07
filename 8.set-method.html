@@ -1,0 +1,96 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>Set Method</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    #bg-setter {
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      color: rgb(120, 120, 120);
+      cursor: pointer;
+      background: linear-gradient(45deg, rgba(0, 200, 255, 0.885), rgba(23, 255, 116, 0.848));
+    }
+
+    .text-color {
+      color: grey;
+    }
+
+    #background {
+      background: linear-gradient(40deg, rgb(0, 128, 255), rgb(110, 255, 112));
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lecture - 11</h1>
+
+  <div class="box" id="main-box">
+    <h1>Set Method</h1>
+    <hr>
+    <p>
+      This method is used to set the value of elements in the HTML DOM Tree
+      There are 4 Set Methods that is :
+    </p>
+
+    <ul>
+      <li> text() - sets innertext of an element</li>
+      <li> html() - sets innerHTML of an element</li>
+      <li> attr() - sets attribute of an element</li>
+      <li> val() - sets value of a form element</li>
+    </ul>
+    <button class="bg-setter" id="bg-setter-btn">Background Setter</button>
+    <button class="bg-setter" id="text-change">Text & HTML Change</button>
+    <button class="bg-setter" id="value-setter">value Setter</button>
+    <hr>
+    <br>
+    <form action="" id="sform">
+      <label for="name">Name </label> <input type="text" id="name"><br><br>
+      <label for="class">Class </label><input type="text" id="class"><br><br>
+      <label for="country">Country </label>
+      <select id="country">
+        <option value="India">India</option>
+        <option value="Russia">Russia</option>
+        <option value="USA">USA</option>
+        <option value="China">China</option>
+      </select><br><br>
+      <input type="submit">
+      <br><br>
+    </form>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+
+      $('#text-change').click(function () {
+        $('.box h1').text('Text Changed');
+
+        $('.box p').html('This method is used to set the value of elements in the <b>HTML DOM Tree</b>. There are 4 Set Methods that is :');
+      })
+
+      $('#bg-setter-btn').click(function () {
+        $('.box').attr('id', 'background');
+      })
+
+      $('#value-setter').click(function () {
+        $('#name').val('Amaresh');
+        $('#class').val('BSC');
+        $('#country').val('Russia');
+      })
+
+    });
+  </script>
+
+</body>
+
+</html>

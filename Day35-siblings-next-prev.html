@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <title>DOM Traversing - Siblings</title>
+  <style>
+    .item {
+      margin: 10px;
+      padding: 15px;
+      border: 2px solid #555;
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size : 1.2rem;
+      font-weight: bold;
+      background-color: #00ff33;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover{
+      background-color: rgba(104, 255, 104, 0.793);
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>DOM Traversing: Siblings</h2>
+  <hr>
+  <div class="item" id="first">1</div>
+  <div class="item">2</div>
+  <div class="item" id="target"><b>Target - 3</b></div>
+  <div class="item">4</div>
+  <div class="item" id="last">5</div>
+  <br>
+  <button id="siblingsBtn">Highlight Siblings</button>
+  <button id="nextBtn">Next Sibling</button>
+  <button id="prevBtn">Previous Sibling</button>
+
+  <script>
+    $(document).ready(function () {
+      $('#siblingsBtn').click(function () {
+        $('#target').siblings().css('background-color', '#ff8a80');
+      });
+      $('#nextBtn').click(function () {
+        $('#target').next().css('border', '3px solid blue');
+      });
+      $('#prevBtn').click(function () {
+        $('#target').prev().css('border', '3px solid blue');
+      });
+    });
+  </script>
+</body>
+
+</html>

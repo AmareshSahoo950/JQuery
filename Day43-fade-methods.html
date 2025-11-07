@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    background-color: rgb(224, 224, 224);
+    font-size: 1.5rem;
+  }
+
+  #desc {
+    background-color: rgb(255, 255, 153);
+    text-wrap: wrap;
+    margin: 40px 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  #output {
+    background-color: rgb(160, 255, 255);
+    text-wrap: wrap;
+    margin: 40px 10px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #9C27B0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: black;
+    font-weight: bold;
+  }
+</style>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <h2>Fade Effects in jQuery</h2>
+
+  <div id="desc">
+    fadeIn() → Gradually increases the opacity to make an element visible.<br>
+    fadeOut() → Gradually decreases the opacity to hide an element.<br>
+    fadeToggle() → Alternates between fadeIn() and fadeOut().<br>
+    fadeTo() → Fades an element to a specific opacity value (0–1).<br>
+    These effects create smooth, visually appealing transitions.
+  </div>
+
+  <button id="fadeInBtn">Fade In</button>
+  <button id="fadeOutBtn">Fade Out</button>
+  <button id="fadeToggleBtn">Fade Toggle</button>
+  <button id="fadeToBtn">Fade To (0.3)</button>
+
+  <div id="output">This box will fade in and out using opacity transitions.</div>
+
+  <script>
+    $(document).ready(function () {
+      $("#fadeInBtn").click(function () {
+        $("#output").fadeIn(800);
+      });
+
+      $("#fadeOutBtn").click(function () {
+        $("#output").fadeOut(800);
+      });
+
+      $("#fadeToggleBtn").click(function () {
+        $("#output").fadeToggle(800);
+      });
+
+      $("#fadeToBtn").click(function () {
+        $("#output").fadeTo(800, 0.3); // decreases to 30% opacity
+      });
+    });
+  </script>
+</body>
+
+</html>

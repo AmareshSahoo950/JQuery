@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery AJAX</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    body {
+      background-color: rgb(224, 224, 224);
+      font-size: 1.5rem;
+    }
+
+    #output {
+      background-color: rgb(160, 255, 255);
+      text-wrap: wrap;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #9C27B0;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      color: black;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>AJAX get function and Query Parameters</h2>
+  <button id="fetch">Fetch All Post</button>
+  <button id="fetchByUser">Fetch All Posts By User 1 </button>
+  <pre id="output"></pre>
+  <script>
+    $('#fetch').click(function () {
+      // $.get(url, [data], [success], [dataType])
+      $.get('https://jsonplaceholder.typicode.com/posts', function (response, status) {
+        if (status === 'success') {
+          $('#output').text(JSON.stringify(response, null, 2));
+          
+        } else {
+          $('#output').text('Failed to retrieve data');
+        }
+      });
+    });
+
+    $('#fetchByUser').click(function () {
+      //query parameters:
+      $.get('https://jsonplaceholder.typicode.com/posts', { userId: 1 }, function (data, status) {
+        if (status === 'success') {
+          $('#output').text('All posts by user 1:'+ JSON.stringify(data,null,2));
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

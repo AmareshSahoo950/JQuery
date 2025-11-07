@@ -1,0 +1,80 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <title>Form Events</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <h1>Lecture - 8</h1>
+  <div class="box">
+    <h1>Form Events</h1>
+    <p>
+      There are 5 Form Events that is : <br>
+      focus() <br>
+      blur() <br>
+      change() - Can perform operation on selecting one of the options and only works with select tag not input
+      tags.<br>
+      select() - Can perform operation on copying the text and only works with input tags not select tags.<br>
+      submit()
+    </p>
+    <hr>
+    <br>
+    <form action="" id="sform">
+      <label for="name">Name </label> <input type="text" id="name"><br><br>
+      <label for="class">Class </label><input type="text" id="class"><br><br>
+      <label for="country">Country </label>
+      <select id="country">
+        <option value="India">India</option>
+        <option value="Russia">Russia</option>
+        <option value="USA">USA</option>
+        <option value="China">China</option>
+      </select><br><br>
+      <input type="submit">
+      <br><br>
+    </form>
+
+    <hr>
+    <div id="selected-item" style='border: 2px solid red;'></div>
+    <br>
+    <br>
+  </div>
+
+
+  <script>
+    $(document).ready(function () {
+      $('#name, #class, #country').focus(function () {
+        $(this).css('background-color', 'lightgreen');
+      })
+
+      $('#name, #class, #country').blur(function () {
+        $(this).css('background-color', '');
+      })
+
+      $('#country').change(function () {
+        $(this).css('background-color', 'lightblue');
+        const countryName = $(this).val();
+        $('#selected-item').html(countryName);
+      })
+
+      $('#name, #class').select(function () {
+        $(this).css('background-color', 'yellow');
+      })
+
+      $('#sform').submit(function () {
+        alert('Form Submitted successfully!!');
+      })
+
+
+    });
+  </script>
+</body>
+
+</html>
